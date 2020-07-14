@@ -1,7 +1,9 @@
 import homeStructGenerate from './homeStructGenerator';
+import {makeProject} from './projectFunctionality';
 
 const homeModule = () => {
     window.this = 'Home';
+    makeProject('Home');
     const body = document.querySelector('#main-div');
     homeStructGenerate(body);
     //console.log('Clicked');
@@ -30,6 +32,17 @@ const homeModule = () => {
     closeProjForm.addEventListener('click' , () => {
         document.querySelector('#projFormConatiner').style.display = 'none';
     });
+
+    const addToDo = document.querySelector('#addToDo');
+    addToDo.addEventListener('click' , () => {
+        document.querySelector('#todoFormConatiner').style.display = 'block';
+    });
+
+    const closeTodoForm = document.querySelector('#closeTodoForm');
+    closeTodoForm.addEventListener('click' , () => {
+        document.querySelector('#todoFormConatiner').style.display = 'none';
+    });
+
 }
 
 export default homeModule;

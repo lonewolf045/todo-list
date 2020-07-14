@@ -24,12 +24,13 @@ const homeStructGenerate = (body) => {
     const addProjectFormGenerate = () => {
         const projFormConatiner = document.createElement('div');
         projFormConatiner.id = 'projFormConatiner';
-        projFormConatiner.classList.add('projAdd-form-popup');
+        projFormConatiner.classList.add('form-popup');
         const projForm = document.createElement('form');
         projForm.name = 'projForm';
         projForm.classList.add('projAddForm');
+        projForm.classList.add('formPage');
         projForm.action = '/action_page.php';
-        projForm.innerHTML = `<h1>Login</h1>
+        projForm.innerHTML = `<h1>Add Project</h1>
   
                                 <label for="projectName"><b>Project Name:</b></label>
                                 <input type="text" name="projectName" required>
@@ -40,9 +41,51 @@ const homeStructGenerate = (body) => {
         body.appendChild(projFormConatiner);
     }
 
+    const addToDoListFormAndButton = () => {
+        const addToDo = document.createElement('div');
+        addToDo.id = 'addToDo';
+        addToDo.innerHTML = '&#43;';
+        body.appendChild(addToDo);
+    }
+
+    const addTodoFormGenerate = () => {
+        const todoFormConatiner = document.createElement('div');
+        todoFormConatiner.id = 'todoFormConatiner';
+        todoFormConatiner.classList.add('form-popup');
+        const todoForm = document.createElement('form');
+        todoForm.name = 'todoForm';
+        todoForm.classList.add('todoAddForm');
+        todoForm.classList.add('formPage');
+        todoForm.action = '/action_page.php';
+        todoForm.innerHTML = `<h1>Add Todo</h1>
+  
+                                <label for="title"><b>Title:</b></label>
+                                <input type="text" name="title" required>
+
+                                <label for="description"><b>Description:</b></label>
+                                <textarea id="description" name="description" rows="4" cols="50"></textarea>
+
+                                <label for="dueDate"><b>Due Date:</b></label>
+                                <input type="date" name="dueDate" required>
+
+                                <label for="priority">Priority:</label>
+                                <select name="priority" id="priority">
+                                    <option value="Low">Low</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="High">High</option>
+                                </select>
+                                
+                                <button type="button" class="btnLogin" id = "btnSubmitTodo">Submit</button>
+                                <div class="closeBtn" id = 'closeTodoForm'>&times;</div>`;
+        todoFormConatiner.appendChild(todoForm);
+        body.appendChild(todoFormConatiner);
+    }
+
     headerGenerate();
     sideBarGenerate();
     addProjectFormGenerate();
+    addToDoListFormAndButton();
+    addTodoFormGenerate();
 }
 
 export default homeStructGenerate;

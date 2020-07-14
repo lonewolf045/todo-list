@@ -21,7 +21,9 @@ const projectRender = () => {
         console.log(projectName);
         let newProject = makeProject(projectName.value);
         addProjectToSideBar(newProject);
-        projects.push(newProject);
+        //projects.push(newProject);
+        //console.log(projects);
+        document.forms['projForm'].reset();
         document.querySelector('#closeProjForm').click();
         document.querySelector('#'+newProject.name).click();
         return;

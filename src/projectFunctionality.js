@@ -6,6 +6,7 @@ const project = (name , todos = []) => {
 
 const makeProject = (name,todos = []) => {
     let newProject = project(name,todos);
+    projects.push(newProject);
     return newProject;
 };
 
