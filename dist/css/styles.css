@@ -1,0 +1,109 @@
+body {
+    background-image: linear-gradient(45deg, rgba(161, 196, 253, 0.7),rgba(194, 233, 251, 0.7));
+}
+
+#headingContainer {
+    display: flex;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    height:100px;
+    align-items: center;
+    width: 100%;
+    background-image: linear-gradient(45deg, rgba(161, 196, 253,1),rgba(194, 233, 251, 1));
+}
+
+#homeMenu {
+    /*justify-self: flex-start;*/
+    width: 40%;
+    padding: 30px;
+    font-size: 20px;
+    left: 0;
+    cursor: pointer;
+}
+
+#heading {
+    justify-self: center;
+    text-align: center;
+}
+
+#sideMenu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(161, 196, 253,1);
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.sideOptions {
+    padding: 15px 30px;
+}
+
+#projFormConatiner {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left:0;
+    bottom: 0;
+    z-index: 9;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.projAddForm {
+    max-width: 300px;
+    padding: 10px;
+    background-color: rgba(155,255,255,0.5);
+    border: 3px solid rgba(145,245,240,0.5);
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.projAddForm input[type=text] {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .projAddForm input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  .projAddForm .btnLogin {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
