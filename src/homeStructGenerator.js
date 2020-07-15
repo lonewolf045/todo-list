@@ -14,11 +14,11 @@ const homeStructGenerate = (body) => {
     }
     const sideBarGenerate = () => {
         const sideMenu = document.createElement('div');
-        sideMenu.id = 'sideMenu';
-        sideMenu.innerHTML = `<div class = 'sideOptions'>Default</div>
+        sideMenu.id = 'sideMenu';      
+        body.appendChild(sideMenu);
+        sideMenu.innerHTML = `  <div class = 'sideOptions projectName' id = 'Home'>Home</div>
                                 <div  class = 'sideOptions' id = 'addProj'>Add New Project</div>
                                 <div id = 'close' class = 'sideOptions closeBtn' >&times;</div>`;
-        body.appendChild(sideMenu);
     }
 
     const addProjectFormGenerate = () => {
@@ -81,11 +81,19 @@ const homeStructGenerate = (body) => {
         body.appendChild(todoFormConatiner);
     }
 
+    const addTodoContainer = () => {
+        const mainDiv = document.querySelector('#main-div');
+        const todoContainer = document.createElement('div');
+        todoContainer.id = 'todoContainer';
+        mainDiv.appendChild(todoContainer);
+    }
+
     headerGenerate();
     sideBarGenerate();
     addProjectFormGenerate();
     addToDoListFormAndButton();
     addTodoFormGenerate();
+    addTodoContainer();
 }
 
 export default homeStructGenerate;

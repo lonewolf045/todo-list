@@ -1,20 +1,22 @@
 import {makeProject , projects} from './projectFunctionality';
+import {loadTodo} from './todoDOM';
+
+const addProjectToSideBar = (project) => {
+    console.log('Started');
+    const sideMenu = document.querySelector('#sideMenu');
+    const newProject = document.createElement('div');
+    newProject.id = project.name;
+    newProject.classList.add('sideOptions');
+    newProject.classList.add('projectName');
+    newProject.textContent = project.name;
+    newProject.addEventListener('click',(e) => {
+        window.this = e.target.textContent;
+        loadTodo(e);
+    });
+    sideMenu.appendChild(newProject);
+}
 
 const projectRender = () => {    
-    const addProjectToSideBar = (project) => {
-        console.log('Started');
-        const sideMenu = document.querySelector('#sideMenu');
-        const newProject = document.createElement('div');
-        newProject.id = project.name;
-        newProject.classList.add('sideOptions');
-        newProject.classList.add('projectName');
-        newProject.textContent = project.name;
-        newProject.addEventListener('click',(e) => {
-            window.this = e.target.textContent;
-        });
-        sideMenu.appendChild(newProject);
-    }
-
     const submitButtonForm = document.querySelector('#btnSubmit');
     submitButtonForm.addEventListener('click', () => {
         let projectName = document.forms['projForm']['projectName'];
@@ -30,4 +32,4 @@ const projectRender = () => {
     });
 }
 
-export default projectRender;
+export {projectRender,addProjectToSideBar};

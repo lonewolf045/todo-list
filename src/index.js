@@ -1,6 +1,6 @@
 import homeModule from './homeDOM';
-import projectRender from './projectDOM';
-import todoRender from './todoDOM';
+import {projectRender} from './projectDOM';
+import {todoRender} from './todoDOM';
 
 homeModule();
 projectRender();

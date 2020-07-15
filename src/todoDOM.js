@@ -2,17 +2,6 @@ import {format} from 'date-fns';
 import {makeTodo, todos , addTodoToProject} from './todoFunctionality';
 
 const todoRender = () => { 
-    
-    const addTodoToPage = (todo,mainDiv) => {
-        const todoContainer = document.createElement('div');
-        todoContainer.classList.add('todoContainer');
-        todoContainer.innerHTML = `<div>${todo.title}</div>
-                                    <div>${todo.description}</div>
-                                    <div>${todo.dueDate}</div>
-                                    <div>${todo.priority}</div>`;
-        mainDiv.appendChild(todoContainer);
-    }
-    
     const submitButtonForm = document.querySelector('#btnSubmitTodo');
     submitButtonForm.addEventListener('click', () => {
         let title = document.forms['todoForm']['title'];
@@ -27,19 +16,44 @@ const todoRender = () => {
         priority = priority.value;
         let newTodo = makeTodo(title,description,dueDate,priority,window.this);
         console.log(newTodo);
-        const mainDiv = document.querySelector('#main-div');
-        console.log(mainDiv);
-        //addProjectToSideBar(newProject);
-        //projects.push(newProject);
-        //document.querySelector('#closeProjForm').click();
-        //document.querySelector('#'+newProject.name).click();
         todos.push(newTodo);
         addTodoToProject(newTodo);
-        addTodoToPage(newTodo,mainDiv);
+        document.querySelector('#'+ window.this).click();
+        //addTodoToPage(newTodo,mainDiv);
         document.forms['todoForm'].reset();
         document.querySelector('#closeTodoForm').click();
         return;
     });
 }
 
-export default todoRender;
+const addTodoToPage = (todo,mainDiv) => {
+    const todoContainer = document.createElement('div');
+    todoContainer.classList.add('todoContainer');
+    todoContainer.innerHTML = `<div>${todo.title}</div>
+                                <div>${todo.description}</div>
+                                <div>${todo.dueDate}</div>
+                                <div>${todo.priority}</div>`;
+    mainDiv.appendChild(todoContainer);
+}
+
+const loadTodo = (e) => {
+    console.log('Loading');
+    if(e.target.textContent === 'Home') {
+        console.log('In Home');
+        const todoContainer = document.querySelector('#todoContainer');
+        todoContainer.innerHTML = '';
+        todos.forEach(todo => {
+            addTodoToPage(todo,todoContainer);
+        });
+    } else {
+        console.log('In Others');
+        const todoContainer = document.querySelector('#todoContainer');
+        todoContainer.innerHTML = '';
+        todos.forEach(todo => {
+            if(todo.project === e.target.textContent)
+                addTodoToPage(todo,todoContainer);
+        });
+    }
+}
+
+export {todoRender,loadTodo};
