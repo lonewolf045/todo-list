@@ -1,5 +1,6 @@
 import {format} from 'date-fns';
-import {makeTodo, todos , addTodoToProject} from './todoFunctionality';
+import {makeTodo, removeTodo} from './todoFunctionality';
+import {todos} from './localStorageFunctions';
 
 const todoRender = () => { 
     const submitButtonForm = document.querySelector('#btnSubmitTodo');
@@ -16,9 +17,9 @@ const todoRender = () => {
         priority = priority.value;
         let newTodo = makeTodo(title,description,dueDate,priority,window.this);
         console.log(newTodo);
-        todos.push(newTodo);
-        addTodoToProject(newTodo);
-        document.querySelector('#'+ window.this).click();
+        //todos.push(newTodo);
+        //addTodoToProject(newTodo);
+        //document.querySelector('#'+ window.this).click();
         //addTodoToPage(newTodo,mainDiv);
         document.forms['todoForm'].reset();
         document.querySelector('#closeTodoForm').click();
@@ -28,12 +29,31 @@ const todoRender = () => {
 
 const addTodoToPage = (todo,mainDiv) => {
     const todoContainer = document.createElement('div');
+    //console.log('KA');
     todoContainer.classList.add('todoContainer');
+    todoContainer.todoStorage = todo;
     todoContainer.innerHTML = `<div>${todo.title}</div>
-                                <div>${todo.description}</div>
+                                <!--<div>${todo.description}</div>-->
                                 <div>${todo.dueDate}</div>
-                                <div>${todo.priority}</div>`;
+                                <div class = '${todo.priority}'>${todo.priority}</div>`;
+    if(todo.project !== window.this) {
+        todoContainer.innerHTML += `<div>${todo.project}</div>`;
+    }
+    todoContainer.innerHTML += `<button class = 'deleteTodo'><span class="glyphicon glyphicon-remove" aria-hidden="true"></button>
+                                <button class = 'doneTodo'><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>`;
     mainDiv.appendChild(todoContainer);
+    //console.log('KA');
+    //addTodoButtonFunctionality(todoContainer);
+}
+
+const addTodoButtonFunctionality = () => {
+    const deleteTodos = todoContainer.querySelectorAll('.deleteTodo');
+    console.log('Testing',deleteTodos);
+    deleteTodos.forEach(deleteTodo => deleteTodo.addEventListener('click', () => {
+        console.log(deleteTodo.parentNode.todoStorage);
+        removeTodo(deleteTodo.parentNode.todoStorage);
+        deleteTodo.parentNode.remove();
+    }));    
 }
 
 const loadTodo = (e) => {
@@ -42,6 +62,7 @@ const loadTodo = (e) => {
         console.log('In Home');
         const todoContainer = document.querySelector('#todoContainer');
         todoContainer.innerHTML = '';
+        console.log('GoiNG IN');
         todos.forEach(todo => {
             addTodoToPage(todo,todoContainer);
         });
@@ -54,6 +75,8 @@ const loadTodo = (e) => {
                 addTodoToPage(todo,todoContainer);
         });
     }
+    addTodoButtonFunctionality();
+    //console.log('GGGGGGG');
 }
 
 export {todoRender,loadTodo};

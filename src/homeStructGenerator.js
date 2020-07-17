@@ -16,8 +16,9 @@ const homeStructGenerate = (body) => {
         const sideMenu = document.createElement('div');
         sideMenu.id = 'sideMenu';      
         body.appendChild(sideMenu);
-        sideMenu.innerHTML = `  <div class = 'sideOptions projectName' id = 'Home'>Home</div>
-                                <div  class = 'sideOptions' id = 'addProj'>Add New Project</div>
+        sideMenu.innerHTML =   //<div class = 'sideOptions projectName' id = 'Home'>Home</div>
+                                `<div  class = 'sideOptions' id = 'addProj'>Add New Project</div>
+                                <div  class = 'sideOptions' id = 'projContainer'></div>
                                 <div id = 'close' class = 'sideOptions closeBtn' >&times;</div>`;
     }
 
@@ -33,7 +34,7 @@ const homeStructGenerate = (body) => {
         projForm.innerHTML = `<h1>Add Project</h1>
   
                                 <label for="projectName"><b>Project Name:</b></label>
-                                <input type="text" name="projectName" required>
+                                <input type="text" name="projectName">
 
                                 <button type="button" class="btnLogin" id = "btnSubmit">Submit</button>
                                 <div class="closeBtn" id = 'closeProjForm'>&times;</div>`;
@@ -60,13 +61,13 @@ const homeStructGenerate = (body) => {
         todoForm.innerHTML = `<h1>Add Todo</h1>
   
                                 <label for="title"><b>Title:</b></label>
-                                <input type="text" name="title" required>
+                                <input type="text" name="title">
 
                                 <label for="description"><b>Description:</b></label>
                                 <textarea id="description" name="description" rows="4" cols="50"></textarea>
 
                                 <label for="dueDate"><b>Due Date:</b></label>
-                                <input type="date" name="dueDate" required>
+                                <input type="date" name="dueDate">
 
                                 <label for="priority">Priority:</label>
                                 <select name="priority" id="priority">
@@ -75,8 +76,8 @@ const homeStructGenerate = (body) => {
                                     <option value="High">High</option>
                                 </select>
                                 
-                                <button type="button" class="btnLogin" id = "btnSubmitTodo">Submit</button>
-                                <div class="closeBtn" id = 'closeTodoForm'>&times;</div>`;
+                                <button type="button" class="btnLogin btn" id = "btnSubmitTodo">Submit</button>
+                                <div class="closeBtn btn btn-danger" id = 'closeTodoForm'>&times;</div>`;
         todoFormConatiner.appendChild(todoForm);
         body.appendChild(todoFormConatiner);
     }
@@ -88,12 +89,28 @@ const homeStructGenerate = (body) => {
         mainDiv.appendChild(todoContainer);
     }
 
+    const addContainer = () => {
+        const mainDiv = document.querySelector('#main-div');
+        const projHeading = document.createElement('h2');
+        projHeading.id = 'projHeading';
+        mainDiv.appendChild(projHeading);
+    }
+
     headerGenerate();
     sideBarGenerate();
     addProjectFormGenerate();
     addToDoListFormAndButton();
     addTodoFormGenerate();
+    addContainer();
+    addProjectHeading();
     addTodoContainer();
 }
 
+const addProjectHeading = (heading = 'Home') => {
+    const mainDiv = document.querySelector('#main-div');
+    const projHeading = document.querySelector('#projHeading');
+    projHeading.textContent = heading;
+}
+
 export default homeStructGenerate;
+export {addProjectHeading};

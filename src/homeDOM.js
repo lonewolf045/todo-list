@@ -1,13 +1,16 @@
 import homeStructGenerate from './homeStructGenerator';
 import {makeProject} from './projectFunctionality';
-import {loadTodo} from './todoDOM';
+import {projects} from './localStorageFunctions';
 
 const homeModule = () => {
     const body = document.querySelector('#main-div');
     homeStructGenerate(body);
     
-    window.this = 'Home';
-    makeProject('Home');
+    if(projects.length === 0) {
+        window.this = 'Home';
+        makeProject('Home');
+    }
+    
 
     //console.log('Clicked');
     /*const sideBarOpen = () => {
@@ -46,10 +49,10 @@ const homeModule = () => {
         document.querySelector('#todoFormConatiner').style.display = 'none';
     });
 
-    document.querySelector('#Home').addEventListener('click',(e) => {
+    /*document.querySelector('#Home').addEventListener('click',(e) => {
         window.this = e.target.textContent;
         loadTodo(e);
-    });
+    });*/
 
 }
 
