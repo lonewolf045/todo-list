@@ -51,4 +51,10 @@ const removeFromProject = (selecTodo) => {
     projects[index].todos.splice(ind,1);
 }
 
-export {makeProject,projects,addTodoToProject,removeFromProject};
+const removeProject = (selecProject) => {
+    let filteredprojects = projects.filter(projectChosen => projectChosen.name !== selecProject);
+    projects.splice(0,projects.length,...filteredprojects);
+    //return projects.filter(projectChosen => projectChosen.name !== selecProject);
+}
+
+export {makeProject,addTodoToProject,removeFromProject,removeProject};

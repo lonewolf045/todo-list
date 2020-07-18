@@ -21,6 +21,7 @@ body {
     align-items: center;
     width: 100%;
     background-image: linear-gradient(45deg, rgba(161, 196, 253,1),rgba(194, 233, 251, 1));
+    z-index: 9;
 }
 
 #homeMenu {
@@ -41,13 +42,14 @@ body {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     top: 0;
     left: 0;
     background-color: rgba(161, 196, 253,1);
     overflow-x: hidden;
     padding-top: 60px;
-    transition: 0.5s;
+    transition: 0.5s ease-in-out;
+    font-size: 20px;
 }
 
 .closeBtn {
@@ -134,10 +136,12 @@ body {
     height: 80px;
     text-align: center;
     border-radius: 50%;
-    font-size: 70px;
-    padding: 5px;
+    padding: 6px 6px;
+    font-size: 50px;
     cursor: pointer;
+    z-index: 12;
 }
+
 
 #addToDo:hover {
     /*width:100px;
@@ -147,12 +151,21 @@ body {
 }
 
 .todoContainer {
+    box-sizing: border-box;
+    position: relative;
     margin: 20px auto;
     width:600px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     border: 1px solid black;
+    padding: 2.5%;
+    border-radius: 25px;
+}
+
+.todoContainerModified {
+    padding: 45px 2.5%;
+    padding-bottom: 2.5%;
 }
 
 .todoContainer div {
@@ -171,7 +184,8 @@ body {
     top: 200px;
     width: 800px;
     margin: auto auto;
-    border: 1px solid black;
+    transition: 0.5s;
+    /* border: 1px solid black; */
 }
 
 .High {
@@ -184,4 +198,74 @@ body {
 
 .Medium {
     background-color: rgba(230 , 230 ,0 ,0.6);
+}
+
+.deleteTodo {
+    width: 10%;
+    background: none;
+    border:none;
+    font-size: 20px;
+    text-align: right;
+}
+
+.doneTodo {
+    width: 10%;
+    background: none;
+    border:none;
+    font-size: 20px;
+}
+
+.titleTodo {
+    width: 50%;
+    text-align: left;
+}
+
+.dueDateTodo {
+    width:30%;
+    text-align: center;
+}
+
+.todoContainer .projectTodo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0px;
+    font-size: 20px;
+    padding: 1%;
+    border: 1px solid black;
+    border-top: none;
+    border-right: none;
+    background-color: rgba(161, 196, 253,1);
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.project {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.projectName {
+    display: block;
+    width: 80%;
+    text-align: left;
+    font-size: 20px;
+    cursor: pointer;
+    align-self: center;
+}
+
+.deleteProject {
+    background: none;
+    border:none;
+    font-size: 30px;
+    /* transform: scale(1.5); */
+}
+
+#addProj {
+    font-weight: 700;
+    font-style: italic;
+    cursor: pointer;
+    margin-top: 30px;
 }

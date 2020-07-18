@@ -1,6 +1,6 @@
 import {format} from 'date-fns';
 import {makeTodo, removeTodo} from './todoFunctionality';
-import {todos} from './localStorageFunctions';
+import {todos,completedTodos} from './localStorageFunctions';
 
 const todoRender = () => { 
     const submitButtonForm = document.querySelector('#btnSubmitTodo');
@@ -15,7 +15,7 @@ const todoRender = () => {
         dueDate = format(new Date(dueDate[0],dueDate[1] - 1,dueDate[2]),'dd MMMM yyyy');
         console.log(dueDate);
         priority = priority.value;
-        let newTodo = makeTodo(title,description,dueDate,priority,window.this);
+        let newTodo = makeTodo(title,description,dueDate,priority,window.projectName);
         console.log(newTodo);
         //todos.push(newTodo);
         //addTodoToProject(newTodo);
@@ -31,13 +31,15 @@ const addTodoToPage = (todo,mainDiv) => {
     const todoContainer = document.createElement('div');
     //console.log('KA');
     todoContainer.classList.add('todoContainer');
+    todoContainer.classList.add(todo.priority);
     todoContainer.todoStorage = todo;
-    todoContainer.innerHTML = `<div>${todo.title}</div>
+    todoContainer.innerHTML = `<h3 class = 'titleTodo'>${todo.title}</h3>
                                 <!--<div>${todo.description}</div>-->
-                                <div>${todo.dueDate}</div>
-                                <div class = '${todo.priority}'>${todo.priority}</div>`;
-    if(todo.project !== window.this) {
-        todoContainer.innerHTML += `<div>${todo.project}</div>`;
+                                <div class = 'dueDateTodo'>${todo.dueDate}</div>
+                                <!-- <div class = '${todo.priority} priorityTodo'>${todo.priority}</div>-->`;
+    if(todo.project !== window.projectName) {
+        todoContainer.innerHTML += `<div class = 'projectTodo'>${todo.project}</div>`;
+        todoContainer.classList.add('todoContainerModified');
     }
     todoContainer.innerHTML += `<button class = 'deleteTodo'><span class="glyphicon glyphicon-remove" aria-hidden="true"></button>
                                 <button class = 'doneTodo'><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>`;
@@ -53,6 +55,15 @@ const addTodoButtonFunctionality = () => {
         console.log(deleteTodo.parentNode.todoStorage);
         removeTodo(deleteTodo.parentNode.todoStorage);
         deleteTodo.parentNode.remove();
+    }));  
+    const doneTodos = todoContainer.querySelectorAll('.doneTodo');
+    console.log('Testing',doneTodos);
+    doneTodos.forEach(doneTodo => doneTodo.addEventListener('click', () => {
+        console.log(doneTodo.parentNode.todoStorage);
+        let k = removeTodo(doneTodo.parentNode.todoStorage);
+        doneTodo.parentNode.remove();
+        completedTodos.push(k);
+        console.log(completedTodos);
     }));    
 }
 

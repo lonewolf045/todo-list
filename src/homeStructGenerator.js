@@ -17,7 +17,7 @@ const homeStructGenerate = (body) => {
         sideMenu.id = 'sideMenu';      
         body.appendChild(sideMenu);
         sideMenu.innerHTML =   //<div class = 'sideOptions projectName' id = 'Home'>Home</div>
-                                `<div  class = 'sideOptions' id = 'addProj'>Add New Project</div>
+                                `<div  class = 'sideOptions' id = 'addProj'><span style = 'font-size: 30px'>&#43;</span> &nbsp; &nbsp;   Add New Project</div>
                                 <div  class = 'sideOptions' id = 'projContainer'></div>
                                 <div id = 'close' class = 'sideOptions closeBtn' >&times;</div>`;
     }
@@ -43,9 +43,11 @@ const homeStructGenerate = (body) => {
     }
 
     const addToDoListFormAndButton = () => {
-        const addToDo = document.createElement('div');
-        addToDo.id = 'addToDo';
+        const addToDo = document.createElement('button');
+        addToDo.classList.add('btn');
+        addToDo.classList.add('btn-default');
         addToDo.innerHTML = '&#43;';
+        addToDo.id = 'addToDo';
         body.appendChild(addToDo);
     }
 

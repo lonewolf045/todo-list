@@ -24,11 +24,13 @@ const homeModule = () => {
     menu.addEventListener('click' , () => {
         //console.log(sideBar.style);
         sideBar.style.width = '280px';
+        document.querySelector('#todoContainer').style.left = '280px';
     });
     const close = document.querySelector('#close');
     close.addEventListener('click', () => {
         //console.log('Clicked');
         sideBar.style.width = '0px';
+        document.querySelector('#todoContainer').style.left = '0px';
     });
     const addProj = document.querySelector('#addProj');
     addProj.addEventListener('click', () => {
