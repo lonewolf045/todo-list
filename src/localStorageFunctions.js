@@ -24,18 +24,24 @@ const getFromStorage = () => {
         todos = JSON.parse(todosStorage);
         // console.log(todos);
 
+    } else {
+        todos = [];
     }
     if (localStorage.completedTodos !== undefined) {
         let completedTodosStorage = localStorage.getItem('completedTodos');
         completedTodos = JSON.parse(completedTodosStorage);
         // console.log(completedTodos);
 
+    } else {
+        completedTodos = [];
     }
     if (localStorage.projects !== undefined || localStorage.projects !== []) {
         let projectsStorage = localStorage.getItem('projects');
         projects = JSON.parse(projectsStorage);
         // console.log(projects);
 
+    } else {
+        projects = [];
     }
 
 }
