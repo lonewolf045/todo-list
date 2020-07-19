@@ -5,7 +5,7 @@ import {projects} from './localStorageFunctions';
 const homeModule = () => {
     const body = document.querySelector('#main-div');
     homeStructGenerate(body);
-    
+    console.log(projects);
     if(projects.length == 0 || projects == null) {
         window.this = 'Home';
         makeProject('Home');
