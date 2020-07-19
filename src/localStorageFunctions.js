@@ -18,6 +18,9 @@ const pushDataToStorage = () => {
 }
 
 const getFromStorage = () => {
+    if(localStorage.projects === undefined) {
+        pushDataToStorage();
+    }
     if (localStorage.todos !== undefined || localStorage.todos !== []) {
 
         let todosStorage = localStorage.getItem('todos');
