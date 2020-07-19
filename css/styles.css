@@ -150,7 +150,7 @@ body {
     transform: scale(1.25);
 }
 
-.todoContainer {
+.todoMainContainer {
     box-sizing: border-box;
     position: relative;
     margin: 20px auto;
@@ -158,21 +158,51 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    border: 1px solid black;
+    border: 2px solid black;
     padding: 2.5%;
     border-radius: 25px;
 }
 
-.todoContainerModified {
+.todoMainContainerModified {
     padding: 45px 2.5%;
     padding-bottom: 2.5%;
 }
 
-.todoContainer div {
+.todoMainContainer div {
     font-size: 20px;
     padding: 20px;
 }
   
+.todoSecondaryContainer {
+    box-sizing: border-box;
+    position: relative;
+    margin: 20px auto;
+    width:600px;
+    border: 2px solid black;
+    padding: 2.5%;
+    border-radius: 25px;
+    height: 0px;
+    display: none;
+    word-break:break-all;
+    transition: 0.5s ease-in-out;
+    margin-top: -25px;
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding-top: 4%;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.show {
+    height: auto;
+    display: block;
+}
+
+.change {
+    margin-bottom: 0;
+}
+
 #projHeading {
     position: relative;
     top: 150px;
@@ -201,7 +231,7 @@ body {
 }
 
 .deleteTodo {
-    width: 10%;
+    width: 6.66%;
     background: none;
     border:none;
     font-size: 20px;
@@ -209,10 +239,18 @@ body {
 }
 
 .doneTodo {
-    width: 10%;
+    width: 6.66%;
     background: none;
     border:none;
     font-size: 20px;
+}
+
+.descriptionTodo {
+    width: 6.66%;
+    background: none;
+    border: none;
+    font-size: 20px;
+    text-align: right;
 }
 
 .titleTodo {
@@ -225,7 +263,7 @@ body {
     text-align: center;
 }
 
-.todoContainer .projectTodo {
+.todoMainContainer .projectTodo {
     position: absolute;
     top: 0;
     right: 0;
