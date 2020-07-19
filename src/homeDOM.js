@@ -6,7 +6,7 @@ const homeModule = () => {
     const body = document.querySelector('#main-div');
     homeStructGenerate(body);
     
-    if(projects.length === 0) {
+    if(projects.length === 0 || projects === null) {
         window.this = 'Home';
         makeProject('Home');
     }
