@@ -9,7 +9,7 @@ projectRender();
 todoRender();
 loadFromStorage();
 document.querySelector('#Home').click();
-console.log(projects,todos);
+//console.log(projects,todos);
 
 /*function storageAvailable(type) {
     var storage;

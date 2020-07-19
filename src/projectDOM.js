@@ -5,7 +5,7 @@ import {addProjectHeading} from './homeStructGenerator';
 import { removeTodoBasedOnProject } from './todoFunctionality';
 
 const addProjectToSideBar = (project) => {
-    console.log('Started');
+    // console.log('Started');
     const sideMenu = document.querySelector('#projContainer');
     const newProject = document.createElement('div');
     const projectName = document.createElement('div');
@@ -28,7 +28,7 @@ const addProjectToSideBar = (project) => {
     deleteProject.projectName = project.name;
     deleteProject.classList.add('deleteProject');
     deleteProject.addEventListener('click', (e) => {
-        console.log(Object(e));
+        // console.log(Object(e));
         removeTodoBasedOnProject(e.target.projectName);
         removeProject(e.target.projectName);
         pushDataToStorage();
@@ -52,12 +52,12 @@ const projectRender = () => {
     const submitButtonForm = document.querySelector('#btnSubmit');
     submitButtonForm.addEventListener('click', () => {
         let projectName = document.forms['projForm']['projectName'];
-        console.log(projectName);
+        // console.log(projectName);
         let newProject = makeProject(projectName.value);
         document.forms['projForm'].reset();
         document.querySelector('#closeProjForm').click();
         document.querySelector('#'+ newProject.name.split(' '),join()).click();
-        //console.log(document.querySelector(projectName == newProject.name));
+        // console.log(document.querySelector(projectName == newProject.name));
         return;
     });
 }

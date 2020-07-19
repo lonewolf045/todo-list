@@ -17,7 +17,7 @@ const makeTodo = (title,description,dueDate,priority,project) => {
 
 const removeTodo = (selecTodo) => {
     const index = todos.indexOf(selecTodo);
-    console.log(`index = ${index}`);
+    // console.log(`index = ${index}`);
     removeFromProject(selecTodo);
     let k = todos.splice(index, 1);
     pushDataToStorage();
@@ -25,7 +25,7 @@ const removeTodo = (selecTodo) => {
 } 
 
 const removeTodoBasedOnProject = (selecProject) => {
-    console.log(selecProject);
+    // console.log(selecProject);
     let filteredTodos = todos.filter(todo => todo.project !== selecProject);
     todos.splice(0,todos.length,...filteredTodos);
     //return todos.filter(todo => todo.name !== selecProject);

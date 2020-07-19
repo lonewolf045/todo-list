@@ -5,8 +5,8 @@ let todos = [];
 let completedTodos = [];
 
 const pushDataToStorage = () => {
-    console.log(projects);
-    console.log(todos);
+    // console.log(projects);
+    // console.log(todos);
     let todoSON = JSON.stringify(todos);
     let projectsSON = JSON.stringify(projects);
     let completedTodoSON = JSON.stringify(completedTodos);
@@ -14,7 +14,7 @@ const pushDataToStorage = () => {
     localStorage.setItem('todos',todoSON);
     localStorage.setItem('projects', projectsSON);
     localStorage.setItem('completeTodos', completedTodoSON);
-    console.log('projects = '+ projects);
+    // console.log('projects = '+ projects);
 }
 
 const getFromStorage = () => {
@@ -22,19 +22,19 @@ const getFromStorage = () => {
 
         let todosStorage = localStorage.getItem('todos');
         todos = JSON.parse(todosStorage);
-        console.log(todos);
+        // console.log(todos);
 
     }
     if (localStorage.completedTodos !== undefined) {
         let completedTodosStorage = localStorage.getItem('completedTodos');
         completedTodos = JSON.parse(completedTodosStorage);
-        console.log(completedTodos);
+        // console.log(completedTodos);
 
     }
     if (localStorage.projects !== undefined || localStorage.projects !== []) {
         let projectsStorage = localStorage.getItem('projects');
         projects = JSON.parse(projectsStorage);
-        console.log(projects);
+        // console.log(projects);
 
     }
 
@@ -43,7 +43,7 @@ const getFromStorage = () => {
 const loadFromStorage = () => {
     //getFromStorage();
     if(projects !== []) {
-        console.log('Loading',projects,todos);
+        // console.log('Loading',projects,todos);
         document.querySelector('#projContainer').innerHTML = '';
         projects.forEach(project => {
             addProjectToSideBar(project);
