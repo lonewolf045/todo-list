@@ -15,7 +15,7 @@ const todoRender = () => {
         dueDate = format(new Date(dueDate[0],dueDate[1] - 1,dueDate[2]),'dd MMMM yyyy');
         //console.log(dueDate);
         priority = priority.value;
-        let newTodo = makeTodo(title,description,dueDate,priority,window.projectName);
+        makeTodo(title,description,dueDate,priority,window.projectName);
         //console.log(newTodo);
         //todos.push(newTodo);
         //addTodoToProject(newTodo);
@@ -58,6 +58,7 @@ const addTodoToPage = (todo,mainDiv) => {
 }
 
 const addTodoButtonFunctionality = () => {
+    const todoContainer = document.querySelector('#todoContainer'); 
     const deleteTodos = todoContainer.querySelectorAll('.deleteTodo');
     //console.log('Testing',deleteTodos);
     deleteTodos.forEach(deleteTodo => deleteTodo.addEventListener('click', () => {

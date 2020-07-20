@@ -1,6 +1,6 @@
-import {makeProject, removeFromProject,removeProject} from './projectFunctionality';
+import {makeProject,removeProject} from './projectFunctionality';
 import {loadTodo} from './todoDOM';
-import {projects,todos, pushDataToStorage} from './localStorageFunctions';
+import {pushDataToStorage} from './localStorageFunctions';
 import {addProjectHeading} from './homeStructGenerator';
 import { removeTodoBasedOnProject } from './todoFunctionality';
 
@@ -56,7 +56,8 @@ const projectRender = () => {
         let newProject = makeProject(projectName.value);
         document.forms['projForm'].reset();
         document.querySelector('#closeProjForm').click();
-        document.querySelector('#'+ newProject.name.split(' '),join()).click();
+
+        document.querySelector('#'+ newProject.name.split(' ').join('')).click();
         // console.log(document.querySelector(projectName == newProject.name));
         return;
     });

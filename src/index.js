@@ -1,7 +1,7 @@
 import homeModule from './homeDOM';
 import {projectRender} from './projectDOM';
 import {todoRender} from './todoDOM';
-import {loadFromStorage,getFromStorage,projects,todos} from './localStorageFunctions';
+import {loadFromStorage,getFromStorage} from './localStorageFunctions';
 
 getFromStorage();
 homeModule();

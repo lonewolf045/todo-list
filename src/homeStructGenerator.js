@@ -109,7 +109,7 @@ const homeStructGenerate = (body) => {
 }
 
 const addProjectHeading = (heading = 'Home') => {
-    const mainDiv = document.querySelector('#main-div');
+    //const mainDiv = document.querySelector('#main-div');
     const projHeading = document.querySelector('#projHeading');
     projHeading.textContent = heading;
 }
