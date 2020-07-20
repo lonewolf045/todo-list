@@ -44,11 +44,13 @@ const homeModule = () => {
     const addToDo = document.querySelector('#addToDo');
     addToDo.addEventListener('click' , () => {
         document.querySelector('#todoFormConatiner').style.display = 'block';
+        document.querySelector('#addToDo').classList.add('addTodoActive');
     });
 
     const closeTodoForm = document.querySelector('#closeTodoForm');
     closeTodoForm.addEventListener('click' , () => {
         document.querySelector('#todoFormConatiner').style.display = 'none';
+        document.querySelector('#addToDo').classList.remove('addTodoActive');
     });
 
     /*document.querySelector('#Home').addEventListener('click',(e) => {

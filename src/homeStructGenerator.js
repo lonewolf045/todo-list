@@ -62,13 +62,13 @@ const homeStructGenerate = (body) => {
         todoForm.action = '/action_page.php';
         todoForm.innerHTML = `<h1>Add Todo</h1>
   
-                                <label for="title"><b>Title:</b></label>
+                                <label for="title">Title:</label>
                                 <input type="text" name="title">
 
-                                <label for="description"><b>Description:</b></label>
+                                <label for="description">Description:</label>
                                 <textarea id="description" name="description" rows="4" cols="50"></textarea>
 
-                                <label for="dueDate"><b>Due Date:</b></label>
+                                <label for="dueDate">Due Date:</label>
                                 <input type="date" name="dueDate">
 
                                 <label for="priority">Priority:</label>
@@ -79,7 +79,7 @@ const homeStructGenerate = (body) => {
                                 </select>
                                 
                                 <button type="button" class="btnLogin btn" id = "btnSubmitTodo">Submit</button>
-                                <div class="closeBtn btn btn-danger" id = 'closeTodoForm'>&times;</div>`;
+                                <div class="closeBtn" id = 'closeTodoForm'>&times;</div>`;
         todoFormConatiner.appendChild(todoForm);
         body.appendChild(todoFormConatiner);
     }
