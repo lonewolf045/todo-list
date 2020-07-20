@@ -1,14 +1,12 @@
 {
-	"version": "2.0.0",
-	"command": "sh",
-	"tasks": [
-		{
-			"command": "sh",
-			"type": "process",
-			"problemMatcher": [
-				"$eslint-stylish"
-			],
-			"label": "eslint: lint whole folder"
-		}
-	]
+  "version": "2.0.0",
+  "command": "sh",
+  "tasks": [
+    {
+      "command": "sh",
+      "type": "process",
+      "problemMatcher": ["$eslint-stylish"],
+      "label": "eslint: lint whole folder"
+    }
+  ]
 }

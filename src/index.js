@@ -1,14 +1,14 @@
-import homeModule from './homeDOM';
-import {projectRender} from './projectDOM';
-import {todoRender} from './todoDOM';
-import {loadFromStorage,getFromStorage} from './localStorageFunctions';
+import homeModule from "./homeDOM";
+import { projectRender } from "./projectDOM";
+import { todoRender } from "./todoDOM";
+import { loadFromStorage, getFromStorage } from "./localStorageFunctions";
 
 getFromStorage();
 homeModule();
 projectRender();
 todoRender();
 loadFromStorage();
-document.querySelector('#Home').click();
+document.querySelector("#Home").click();
 //console.log(projects,todos);
 
 /*function storageAvailable(type) {

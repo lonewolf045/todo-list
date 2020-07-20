@@ -1,323 +1,337 @@
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    height: 100%;
-    margin: 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-image: linear-gradient(45deg, rgba(161, 196, 253, 0.7),rgba(194, 233, 251, 0.7));
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(
+    45deg,
+    rgba(161, 196, 253, 0.7),
+    rgba(194, 233, 251, 0.7)
+  );
 }
 
 #headingContainer {
-    display: flex;
-    position: fixed;
-    top:0;
-    left: 0;
-    right: 0;
-    flex-direction: row;
-    height:100px;
-    align-items: center;
-    width: 100%;
-    background-image: linear-gradient(45deg, rgba(161, 196, 253,1),rgba(194, 233, 251, 1));
-    z-index: 9;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  flex-direction: row;
+  height: 100px;
+  align-items: center;
+  width: 100%;
+  background-image: linear-gradient(
+    45deg,
+    rgba(161, 196, 253, 1),
+    rgba(194, 233, 251, 1)
+  );
+  z-index: 9;
 }
 
 #homeMenu {
-    /*justify-self: flex-start;*/
-    width: 40%;
-    padding: 30px;
-    font-size: 30px;
-    left: 0;
-    cursor: pointer;
+  /*justify-self: flex-start;*/
+  width: 40%;
+  padding: 30px;
+  font-size: 30px;
+  left: 0;
+  cursor: pointer;
 }
 
 #heading {
-    justify-self: center;
-    text-align: center;
+  justify-self: center;
+  text-align: center;
 }
 
 #sideMenu {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    background-color: rgba(161, 196, 253,1);
-    overflow-x: hidden;
-    padding-top: 60px;
-    transition: 0.1s ease-in-out;
-    font-size: 20px;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: rgba(161, 196, 253, 1);
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.1s ease-in-out;
+  font-size: 20px;
 }
 
 .closeBtn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 36px;
-    margin-left: 50px;
-    cursor: pointer;
-    font-size: 48px;
-    float: right;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 36px;
+  margin-left: 50px;
+  cursor: pointer;
+  font-size: 48px;
+  float: right;
 }
 
 .sideOptions {
-    padding: 15px 30px;
+  padding: 15px 30px;
 }
 
 .form-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left:0;
-    bottom: 0;
-    z-index: 9;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 13;
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 9;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 13;
 }
 
 .formPage {
-    max-width: 600px;
-    padding: 10px;
-    background-color: rgb(206, 0, 233,1);
-    border: 3px solid rgba(206,0,233,0.5);
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+  max-width: 600px;
+  padding: 10px;
+  background-color: rgb(206, 0, 233, 1);
+  border: 3px solid rgba(206, 0, 233, 0.5);
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
 .formPage h1 {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
-.formPage input[type=text] , .formPage textarea, .formPage input[type=date] , .formPage select , .formPage option {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-    font-size: 20px;
+.formPage input[type="text"],
+.formPage textarea,
+.formPage input[type="date"],
+.formPage select,
+.formPage option {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  font-size: 20px;
 }
-  
-  /* When the inputs get focus, do something */
-.formPage input[type=text]:focus, .formPage textarea:focus, .formPage input[type=date]:focus, .formPage select:focus {
-    background-color: #ddd;
-    outline: none;
+
+/* When the inputs get focus, do something */
+.formPage input[type="text"]:focus,
+.formPage textarea:focus,
+.formPage input[type="date"]:focus,
+.formPage select:focus {
+  background-color: #ddd;
+  outline: none;
 }
-  
+
 .formPage textarea {
-      resize: none;
+  resize: none;
 }
 
 .formPage select {
-      width: 100%;
+  width: 100%;
 }
-  /* Set a style for the submit/login button */
+/* Set a style for the submit/login button */
 .formPage .btnLogin {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom:10px;
-    opacity: 0.8;
+  background-color: #4caf50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
 }
 
 .formPage label {
-    font-size: 22px;
-    font-weight: 400;
+  font-size: 22px;
+  font-weight: 400;
 }
 
 #addToDo {
-    background: white;
-    position: fixed;
-    bottom: 80px;
-    right: 80px;
-    width: 80px;
-    height: 80px;
-    text-align: center;
-    border-radius: 50%;
-    padding: 6px 6px;
-    font-size: 50px;
-    cursor: pointer;
-    z-index: 12;
+  background: white;
+  position: fixed;
+  bottom: 80px;
+  right: 80px;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  border-radius: 50%;
+  padding: 6px 6px;
+  font-size: 50px;
+  cursor: pointer;
+  z-index: 12;
 }
 
 .addTodoActive {
-    visibility: hidden;
+  visibility: hidden;
 }
 
-
 #addToDo:hover {
-    /*width:100px;
+  /*width:100px;
     height: 100px;
     font-size: 90px;*/
-    transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .todoMainContainer {
-    box-sizing: border-box;
-    position: relative;
-    margin: 20px auto;
-    width:600px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border: 2px solid black;
-    padding: 2.5%;
-    border-radius: 25px;
+  box-sizing: border-box;
+  position: relative;
+  margin: 20px auto;
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 2px solid black;
+  padding: 2.5%;
+  border-radius: 25px;
 }
 
 .todoMainContainerModified {
-    padding: 45px 2.5%;
-    padding-bottom: 2.5%;
+  padding: 45px 2.5%;
+  padding-bottom: 2.5%;
 }
 
 .todoMainContainer div {
-    font-size: 20px;
-    padding: 20px;
+  font-size: 20px;
+  padding: 20px;
 }
-  
+
 .todoSecondaryContainer {
-    box-sizing: border-box;
-    position: relative;
-    margin: 20px auto;
-    width:600px;
-    border: 2px solid black;
-    padding: 2.5%;
-    border-radius: 25px;
-    height: 0px;
-    display: none;
-    word-break:break-all;
-    transition: display 0.5s, height 0.5s;
-    margin-top: -25px;
-    border-top: none;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    padding-top: 4%;
-    font-size: 22px;
-    font-weight: 500;
+  box-sizing: border-box;
+  position: relative;
+  margin: 20px auto;
+  width: 600px;
+  border: 2px solid black;
+  padding: 2.5%;
+  border-radius: 25px;
+  height: 0px;
+  display: none;
+  word-break: break-all;
+  transition: display 0.5s, height 0.5s;
+  margin-top: -25px;
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding-top: 4%;
+  font-size: 22px;
+  font-weight: 500;
 }
 
 .show {
-    height: auto;
-    display: block;
+  height: auto;
+  display: block;
 }
 
 .change {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 #projHeading {
-    position: relative;
-    top: 150px;
-    text-align: center;
+  position: relative;
+  top: 150px;
+  text-align: center;
 }
 
 #todoContainer {
-    position: relative;
-    top: 200px;
-    width: 800px;
-    margin: auto auto;
-    transition: 0.5s;
-    /* border: 1px solid black; */
+  position: relative;
+  top: 200px;
+  width: 800px;
+  margin: auto auto;
+  transition: 0.5s;
+  /* border: 1px solid black; */
 }
 
 .High {
-    background-color: rgba(230, 0, 0, 0.6);
+  background-color: rgba(230, 0, 0, 0.6);
 }
 
 .Low {
-    background-color: rgba(0, 230, 0, 0.6);
+  background-color: rgba(0, 230, 0, 0.6);
 }
 
 .Medium {
-    background-color: rgba(230 , 230 ,0 ,0.6);
+  background-color: rgba(230, 230, 0, 0.6);
 }
 
 .deleteTodo {
-    width: 6.66%;
-    background: none;
-    border:none;
-    font-size: 20px;
-    text-align: right;
+  width: 6.66%;
+  background: none;
+  border: none;
+  font-size: 20px;
+  text-align: right;
 }
 
 .doneTodo {
-    width: 6.66%;
-    background: none;
-    border:none;
-    font-size: 20px;
+  width: 6.66%;
+  background: none;
+  border: none;
+  font-size: 20px;
 }
 
 .descriptionTodo {
-    width: 6.66%;
-    background: none;
-    border: none;
-    font-size: 20px;
-    text-align: right;
+  width: 6.66%;
+  background: none;
+  border: none;
+  font-size: 20px;
+  text-align: right;
 }
 
 .titleTodo {
-    width: 50%;
-    text-align: left;
+  width: 50%;
+  text-align: left;
 }
 
 .dueDateTodo {
-    width:30%;
-    text-align: center;
+  width: 30%;
+  text-align: center;
 }
 
 .todoMainContainer .projectTodo {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0px;
-    font-size: 20px;
-    padding: 1%;
-    border: 1px solid black;
-    border-top: none;
-    border-right: none;
-    background-color: rgba(161, 196, 253,1);
-    border-top-right-radius: 25px;
-    border-bottom-left-radius: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0px;
+  font-size: 20px;
+  padding: 1%;
+  border: 1px solid black;
+  border-top: none;
+  border-right: none;
+  background-color: rgba(161, 196, 253, 1);
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
 .project {
-    display: flex;
-    width: 60%;
-    justify-content: space-between;
-    align-content: center;
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  align-content: center;
 }
 
 .projectName {
-    display: block;
-    width: 80%;
-    text-align: left;
-    font-size: 20px;
-    cursor: pointer;
-    align-self: center;
+  display: block;
+  width: 80%;
+  text-align: left;
+  font-size: 20px;
+  cursor: pointer;
+  align-self: center;
 }
 
 .deleteProject {
-    background: none;
-    border:none;
-    font-size: 30px;
-    /* transform: scale(1.5); */
+  background: none;
+  border: none;
+  font-size: 30px;
+  /* transform: scale(1.5); */
 }
 
 #addProj {
-    font-weight: 700;
-    font-style: italic;
-    cursor: pointer;
-    margin-top: 30px;
+  font-weight: 700;
+  font-style: italic;
+  cursor: pointer;
+  margin-top: 30px;
 }
