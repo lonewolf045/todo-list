@@ -48,14 +48,14 @@ body {
     background-color: rgba(161, 196, 253,1);
     overflow-x: hidden;
     padding-top: 60px;
-    transition: 0.5s ease-in-out;
+    transition: 0.1s ease-in-out;
     font-size: 20px;
 }
 
 .closeBtn {
     position: absolute;
-    top: 25px;
-    right: 25px;
+    top: 10px;
+    right: 15px;
     font-size: 36px;
     margin-left: 50px;
     cursor: pointer;
@@ -78,13 +78,14 @@ body {
     height: 100%;
     width: 100%;
     background-color: rgba(0,0,0,0.5);
+    z-index: 13;
 }
 
 .formPage {
-    max-width: 300px;
+    max-width: 600px;
     padding: 10px;
-    background-color: rgba(155,255,255,0.5);
-    border: 3px solid rgba(145,245,240,0.5);
+    background-color: rgb(206, 0, 233,1);
+    border: 3px solid rgba(206,0,233,0.5);
     margin: 0;
     position: absolute;
     top: 50%;
@@ -93,30 +94,34 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.formPage h1 {
+    margin-bottom: 30px;
+}
+
 .formPage input[type=text] , .formPage textarea, .formPage input[type=date] , .formPage select , .formPage option {
-    width: 90%;
+    width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
     border: none;
     background: #f1f1f1;
     font-size: 20px;
-  }
+}
   
   /* When the inputs get focus, do something */
-  .formPage input[type=text]:focus, .formPage textarea:focus, .formPage input[type=date]:focus, .formPage select:focus {
+.formPage input[type=text]:focus, .formPage textarea:focus, .formPage input[type=date]:focus, .formPage select:focus {
     background-color: #ddd;
     outline: none;
-  }
+}
   
-  .formPage textarea {
+.formPage textarea {
       resize: none;
-  }
+}
 
-  .formPage select {
+.formPage select {
       width: 100%;
-  }
+}
   /* Set a style for the submit/login button */
-  .formPage .btnLogin {
+.formPage .btnLogin {
     background-color: #4CAF50;
     color: white;
     padding: 16px 20px;
@@ -125,7 +130,12 @@ body {
     width: 100%;
     margin-bottom:10px;
     opacity: 0.8;
-  }
+}
+
+.formPage label {
+    font-size: 22px;
+    font-weight: 400;
+}
 
 #addToDo {
     background: white;
@@ -140,6 +150,10 @@ body {
     font-size: 50px;
     cursor: pointer;
     z-index: 12;
+}
+
+.addTodoActive {
+    visibility: hidden;
 }
 
 
@@ -184,7 +198,7 @@ body {
     height: 0px;
     display: none;
     word-break:break-all;
-    transition: 0.5s ease-in-out;
+    transition: display 0.5s, height 0.5s;
     margin-top: -25px;
     border-top: none;
     border-top-left-radius: 0;
